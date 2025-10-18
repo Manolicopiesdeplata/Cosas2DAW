@@ -1,0 +1,24 @@
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+thead,
+tfoot {
+    background-color: orange;
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+    height: 20px;
+}
+
+tbody tr {
+    background-color: cornflowerblue;
+}
+
+.alterno {
+    background-color: lightblue;
+}
