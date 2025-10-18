@@ -1,0 +1,45 @@
+h1 {
+    margin-left: 40px;
+    color: #00F;
+}
+table, thead tr th, td, tr {
+    border: 1px solid #333;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 10px;
+    font-family: Arial;
+}
+thead tr th::first-letter {
+    font-size: 1.5em;
+    
+}
+thead tr th {
+    background-color: #008B8B;
+    color: white;
+}
+tbody tr > th{
+    padding-left: 1.2em;
+    padding-right: 0.3em;
+}
+#euro {
+    background: url(Fotos/euro.png) no-repeat left center;
+    background-color: #E6F3FF;;
+}
+#dolar {
+    background: url(Fotos/dolar.png) no-repeat left center;
+    background-color: #E6F3FF;
+}
+#libra {
+    background: url(Fotos/libra.png) no-repeat left center;
+    background-color: #E6F3FF;
+}
+#yen {
+    background: url(Fotos/yen.png) no-repeat left center;
+    background-color: #E6F3FF;
+}
+thead tr th:hover, tbody tr > th:hover {
+    text-decoration: underline;
+}
+tr.alterno td {
+    background-color: #F0E68C;
+}
