@@ -1,0 +1,27 @@
+table, td{
+    text-align: center;
+    background-color: pink;
+    border: 2px solid blue;
+    border-collapse: collapse;
+}
+table {
+    width: 400px;
+}
+.ninguno {
+    border: none;
+    background-color: yellow;
+}
+.escondido {
+    border: hidden;
+    background-color: yellow;
+}
+thead td {
+    font-weight: bold;
+}
+p {
+    width: 500px;
+    border: 10px solid orange;
+    padding: 15px;
+    margin: 25px;
+    background-color: pink;
+}
