@@ -1,0 +1,43 @@
+body{
+    width: 620px;
+}
+h1, p{
+    padding: 5px;
+}
+#megacaja {
+    align-items: center;
+    border: 10px solid orange;
+    padding: 15px;
+    margin: 25px;
+    width: 500px;
+    background-color: pink;
+}
+#p1 {
+    border: 2px solid blue;
+    border-top: 5px double green;
+}
+#p2 {
+    border: 2px solid blue; 
+    border-bottom: thick dashed green;
+}
+#p3 {
+    border: 10px dotted green;
+    border-top: dotted 5px green;
+    border-bottom: dotted 5px green;
+}
+#p4 {
+    border-top: 8px double blue;
+    border-bottom: 7px solid white;
+    border-left: 7px solid purple;
+    border-right: 3px dashed red;
+}
+h1 {
+    border: 3px solid black;
+    background-color: lightblue;
+}
+h1+p {
+    border: 3px solid black;
+}
+h1{
+    text-align: center;
+}
