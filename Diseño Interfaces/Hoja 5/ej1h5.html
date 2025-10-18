@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+   body {
+   	font-family:sans-serif;
+  	background-color: lightyellow;
+   	}
+   h1 {
+  	border-bottom: #FFCC66 5px solid;
+   	text-align: center;
+   	}
+   p {
+   	color: green;
+   	border: #FF9933 10px solid;
+   	border-width: 0 0 2px 2px;
+   	}
+
+   p.derecha {
+   	text-align: right;
+   	border-width: 0 2px 2px 0;
+	color:blue;
+	background-color:yellow;
+   	}
+
+   p[class="derecha"] {background-color:pink}
+
+   #Pepe {
+   	color: red;
+   	border-width: 0;
+   	}
+
+   .destacado {
+   	color: white;
+   	background-color: red;
+   	}
+
+   p.destacado span.destacado {
+   	color: red;
+   	background-color: white;
+   	}
+ </style>
+</head>
+
+<body>
+ <h1>Estilos</h1>
+
+ <p>1. Los estilos simplifican el diseño de una página.</p>
+
+ <p class="especial derecha">2. Podemos definirlos en el propio <span class="destacado"> elemento</span>.</p>
+
+ <p>3. Definirlos en la <span class="destacado" style="color:black">cabecera</span>.</p>
+ 
+<p class="derecha">4. O utilizar una <span class="destacado">hoja de estilo</span>.</p>
+ 
+<br>
+
+ <p id="Pepe">Parrafo 1: Este es el párrafo <span class="destacado">Pepe</span>, con su propio estilo.</p>
+
+<p class="destacado">Parrafo 2: Este es un párrafo de la clase <span class="destacado"> destacado</span>.</p>
+
+ <p class="destacado" style="background-color: orange">Parrafo 3: Este, también es destacado, pero con un estilo en línea.</p>
+
+</body>
+</html>
