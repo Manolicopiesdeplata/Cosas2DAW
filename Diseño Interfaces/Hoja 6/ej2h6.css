@@ -1,0 +1,48 @@
+* {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+}
+
+body {
+    background: url("toyota-ae86.png") no-repeat;
+    background-size: 100vw 100vh;
+}
+
+table {
+    width: 50%;
+}
+td {
+    height: 20px;
+}
+
+thead,
+tfoot {
+    background-color: orange;
+}
+
+table,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+@media screen {
+    tbody tr {
+        background-color: cornflowerblue;
+    }
+
+    .alterno {
+        background-color: lightblue;
+    }
+}
+
+@media print {
+    tbody tr {
+        background-color: lightblue;
+    }
+
+    .alterno {
+        background-color: cornflowerblue;
+    }
+}
