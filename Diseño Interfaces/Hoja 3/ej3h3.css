@@ -1,0 +1,24 @@
+* {
+    font-family: Georgia;
+}
+.titulillos {
+    color: #A000D3 ;
+    font-weight: bold;
+}
+.dospuntos {
+    color: #46a8be;
+    font-style: italic;
+}
+.listas {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 3px double black;
+    border-radius: 10px;
+    background-color: #C0C0C0;
+}
+#titulo {
+    background-color: #EE82EE;
+}
+ol li {
+    padding-left: 3px;
+}
