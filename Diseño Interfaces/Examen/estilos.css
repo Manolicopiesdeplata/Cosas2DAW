@@ -1,0 +1,88 @@
+* {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-family: Arial;
+}
+body{
+  background-color: #f4f4f4;
+}
+#entero{
+  margin: auto;
+  width: 70%;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #CCC;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+h2 {
+  color: darkblue;
+}
+span {
+  font-weight: bold;
+}
+h2 + p{
+  margin-bottom: 20px;
+  padding: 10px;
+}
+table, th, td{
+  border: 1px solid gray;
+  padding: 10px;
+  margin: auto;
+}
+th {
+  background-color: #e0f7e0;
+}
+table {
+  width: 70%;
+  border-style: none;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  border-bottom: 0px;
+}
+#total {
+  border-style: none;
+  font-weight: bold;
+  text-align: right;
+}
+#verde{
+  border-style: none;
+  background-color: #e0f7e0;
+  border-radius: 50%;
+
+}
+#enlaces {
+  padding: 10px;
+}
+a:link {
+  display: inline-block;
+  background-color: lightblue;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  padding: 10px 15px;
+  margin: 10px;
+}
+a:hover {
+  color: white;
+  background-color: deepskyblue;
+}
+a::first-letter {
+  font-weight: bolder;
+}
+#recordar {
+  background-color: #e0f7e0;
+  border: 1px solid green;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px;
+}
+@media print {
+  h2::after {
+    content: " (Modo Impresion)";
+    font-size: small;
+    color: red;
+  }
+}

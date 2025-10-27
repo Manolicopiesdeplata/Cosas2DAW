@@ -1,0 +1,86 @@
+body {
+    background-color: dodgerblue;
+    font-family: Helvetica;
+}
+h1 {
+    color: white;
+    font-weight: bolder;
+    text-shadow: black 3px 3px;
+}
+p{
+    text-align: center;
+}
+div {
+    margin-top: 1%;
+    width: 550px;
+}
+h1 span{
+    color: #022E56;
+    text-shadow: gray 3px 3px;
+}
+p::first-letter {
+    text-transform: capitalize;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+.cajablanca {
+    border: 10px solid black;
+    background-color: white;
+    border-radius: 1.5em;
+}
+.cajanaranja {
+    border: 20px solid orange;
+    background-color: #FEE08A;
+    border-bottom-left-radius: 1em;
+    border-top-left-radius: 1em;
+}
+.cajaverde {
+    border: 15px solid #31694E;
+    background-color: #7DCC80;
+    color: white;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+.cajacentro {
+    border: 5px dashed white;
+    background-color: #004681;
+    color: white;
+}
+#caja1 {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+    width: 550px;
+}
+#caja2 {
+width: 550px;
+}
+#caja3 {
+    width: 550px;
+    margin-left: auto;
+}
+#caja4 {
+    margin: 1% auto auto auto;
+    width: 550px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#caja5 {
+    width: 550px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#caja6 {
+    width: 550px;
+    margin-left: auto;
+}
+#caja7 {
+     margin: 1% auto auto auto;
+    width: 550px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.cajaverde p{
+    margin: .1em;
+}
