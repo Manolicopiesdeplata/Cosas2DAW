@@ -2,30 +2,22 @@
 require_once("catalogo_productos.php");
 
 function filtrar_igual($productos, $campo, $valor) {
-    $res = array_filter($productos, function($producto) use ($campo, $valor) {
-        return isset($producto[$campo]) && $producto[$campo] == $valor;
-    });
+    $res = array_filter($productos, fn($producto) => $producto[$campo] == $valor);
     return array_values($res);
 }
 
 function filtrar_mayor($productos, $campo, $valor) {
-    $res = array_filter($productos, function($producto) use ($campo, $valor) {
-        return isset($producto[$campo]) && floatval($producto[$campo]) > floatval($valor);
-    });
+    $res = array_filter($productos, fn($producto) => $producto[$campo] > $valor);
     return array_values($res);
 }
 
 function filtrar_menor($productos, $campo, $valor) {
-    $res = array_filter($productos, function($producto) use ($campo, $valor) {
-        return isset($producto[$campo]) && floatval($producto[$campo]) < floatval($valor);
-    });
+    $res = array_filter($productos, fn($producto) => $producto[$campo] < $valor);
     return array_values($res);
 }
 
 function filtrar_contiene($productos, $campo, $valor) {
-    $res = array_filter($productos, function($producto) use ($campo, $valor) {
-        return isset($producto[$campo]) && stripos($producto[$campo], $valor) !== false;
-    });
+    $res = array_filter($productos, fn($producto) =>  stripos($producto[$campo], $valor) !== false);
     return array_values($res);
 }
 
