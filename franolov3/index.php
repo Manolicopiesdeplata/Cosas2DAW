@@ -10,10 +10,16 @@ require_once( "src/funciones.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista Productos</title>
     <style>
+        * {
+            font-family: Helvetica;
+        }
         table, th, td {
-            border:  1px solid orange;
+            border:  2px solid violet;
             border-collapse: collapse;
             padding: 5px;
+            text-align: center;
+            color: white;
+            background-color: lightblue;
         }
     </style>
 </head>

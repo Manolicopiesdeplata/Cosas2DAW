@@ -41,6 +41,13 @@
             "categoria" => "Accesorios",
             "stock" => 30,
             "precio" => 65.00
+        ],
+        [
+            "id"=> 7,
+            "nombre" => "Guia Para aprobar PHP",
+            "categoria" => "Objetos prohibidos",
+            "stock" => 1,
+            "precio" => 3333
         ]
     ];
 ?>
