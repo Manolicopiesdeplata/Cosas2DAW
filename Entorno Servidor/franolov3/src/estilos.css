@@ -1,0 +1,33 @@
+tr, td {
+
+    background-color: rgb(110, 160, 177);
+    border: solid 1px black;
+    text-align: center;
+    padding: 5px;
+    border-collapse: collapse;
+}
+
+th {
+
+    background-color: rgb(255, 255, 255);
+    border: solid 1px black;
+    border-radius: 10px;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    padding: 5px;
+    border-collapse: collapse;
+
+}
+
+table {
+    background-color: lightblue;
+    border: solid 1px black;
+    text-align: center;
+    padding: 5px;
+    border-radius: 8px;
+
+}
+td:hover {
+    background-color: rgb(6, 84, 110);
+}
