@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background: black;
+            margin: 30px;
+        }
+        #contenedor {
+            background: purple;
+            position: relative;
+            padding: 15px;
+        }
+        #caja1, #caja2, #caja3 {
+            background: orange;
+            border: 2px solid red;
+            height: 100px;
+            text-align: center;
+            padding-top: 40px;
+        }
+        #caja1 {
+            position: absolute;
+            left: 100px;
+            top: 50px;
+        }
+        #caja2 {
+            position: relative;
+            left: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="caja1">Caja 1</div>
+        <div id="caja2">Caja 2</div>
+        <div id="caja3">Caja 3</div>
+    </div>
+</body>
+</html>
