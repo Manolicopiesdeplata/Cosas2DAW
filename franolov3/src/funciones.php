@@ -50,40 +50,56 @@ function imprimirTabla($productos){
             
             echo "</table>";
 }
+//FUNCION PARA MOSTRAR LOS CHECKBOX EN EL INDEX
+function cajas($productos) {
+    foreach (array_keys($productos[0]) as $caja) {  
+        echo "<input type='checkbox' name='CampoASeleccionar[]' value='" . $caja ."'>" . ucfirst($caja);
+    }
+}
+//FUNCION PARA HACER LA LISTA DE FILTRACION DE PRODUCTO
+function lista($productos) {
+        echo "<select name='filtroProducto'>";
+        echo "<option value='sinCampo' selected>Sin campo</option>";
+        foreach  (array_keys($productos[0]) as $listado) {  
+        echo "<option value='$listado'>" . ucfirst($listado) . "</option>";
+    }    
+    echo "</select>";
+    }
+
 
 //AQUI COMPRUEBA QUE EL METODO DE PETICION ES POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $campos = $_POST["CampoASeleccionar"] ?? [];
     $filtro = $_POST["filtroProducto"];
-    $funcion = $_POST["conSin"];
+    $funcion = $_POST["conOSinFiltrado"];
     $criterio = $_POST["criterio"];
 
     $productos_filtrados = $productos; 
 //SI NO LE DAMOS NINGUN VALOR A NADA CREAMOS UN ARRAY ASOCIATIVO CON LAS CLAVES Y VALORES CON LAS QUE ASOCIAREMOS AL CAMPO
-    if ($filtro != "sc" && $funcion != "sin" && $criterio !== "") {
+    if ($filtro != "sinCampo" && $funcion != "sinFiltrado" && $criterio !== "") {
 
         $todo = [
             "id" => "id",
-            "no" => "nombre",
-            "ca" => "categoria",
-            "st" => "stock",
-            "pr" => "precio"
+            "nombre" => "nombre",
+            "categoria" => "categoria",
+            "stock" => "stock",
+            "precio" => "precio"
         ];
         $campo = $todo[$filtro] ?? null;
 //SWITCH PARA COMPROBAR EN FUNCION EL SELECCIONADO QUE LE DIMOS EN EL FORMULARIO, AL CUAL SE LE APLICARÁ LA FUNCION
         if ($campo) {
             switch ($funcion) {
-                case "igu":
+                case "igual":
                         $productos_filtrados = filtrar_igual($productos_filtrados, $campo, $criterio);
                     break;
-                case "con":
+                case "contiene":
                     $productos_filtrados = filtrar_contiene($productos_filtrados, $campo, $criterio);
                     break;
-                case "maq":
+                case "mayorQue":
                     $productos_filtrados = filtrar_mayor($productos_filtrados, $campo, $criterio);
                     break;
-                case "meq":
+                case "menorQue":
                     $productos_filtrados = filtrar_menor($productos_filtrados, $campo, $criterio);
                     break;
             }

@@ -28,28 +28,20 @@ require_once( "src/funciones.php");
         <?= imprimirTabla($productos)?>
         <form action="src/funciones.php" method="post">
             <label>Campos a seleccionar:
-                <?php foreach (array_keys($productos[0]) as $cajas): ?>
-                    <input type="checkbox"name="CampoASeleccionar[]" value="<?=$cajas?>"><?=ucfirst($cajas)?>
-                <?php endforeach; ?>
+                <?= cajas($productos)?>
                 <br><br>
             </label>
             <label>Campo a filtrar:
-                <select name="filtroProducto">
-                    <option value="sc" selected>Sin Campo</option>
-                    <?php foreach (array_keys($productos[0]) as $filtro): ?>
-                    <option value="<?=substr($filtro, 0, 2)?>"><?=ucfirst($filtro)?></option>
-                <?php endforeach; ?>
-                   
-                </select>
+                <?= lista($productos)?>
                 <br><br>
             </label>
             <label>Funcion de filtrado:
-                <select name="conSin">
-                    <option value="sin">Sin filtrado</option>
-                    <option value="igu">Igual a</option>
-                    <option value="con">Contiene</option>
-                    <option value="maq">Mayor que</option>
-                    <option value="meq">Menor que</option>
+                <select name="conOSinFiltrado">
+                    <option value="sinFiltrado">Sin filtrado</option>
+                    <option value="igual">Igual a</option>
+                    <option value="contiene">Contiene</option>
+                    <option value="mayorQue">Mayor que</option>
+                    <option value="menorQue">Menor que</option>
                 </select>
                 <br><br>
             </label>
