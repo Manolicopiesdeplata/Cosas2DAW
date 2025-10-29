@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Conversor de temperatura</h1>
+    <form action="ej4p.php" method="post">
+        <p>Dame una temperatura:</p>
+        <input type="number" name="grado" step="0.001">
+        <p>Selecciona a que lo quieres convertir:</p>
+        <select name="grados">
+            <option value="cf">Celsius -> Farenheit</option>
+            <option value="ck">Celsius -> Kelvin</option>
+            <option value="fc">Farenheit -> Celsius</option>
+            <option value="fk">Farenheit -> Kelvin</option>
+            <option value="kc">Kelvin -> Celsius</option>
+            <option value="kf">Kelvin -> Farenheit</option>
+        </select>
+        <button>Enviar datos</button>
+    </form>
+</body>
+
+</html>
