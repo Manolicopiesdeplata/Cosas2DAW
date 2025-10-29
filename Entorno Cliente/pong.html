@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
+    <style>
+        #juego {
+            width: 600px;
+            height: 300px;
+            border: 10px solid orange;
+            position: relative;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="juego">
+        <script type="text/javascript">
+            Crafty.init(600, 300, document.getElementById('juego'));
+            Crafty.background('gray');
+
+            //Palitos
+            Crafty.e("Paddle, 2D, DOM, Color, Multiway")
+                .color('aqua')
+                .attr({ x: 10, y: 100, w: 10, h: 80 })
+                .multiway(200, { W: -90, S: 90 });
+            Crafty.e("Paddle, 2D, DOM, Color, Multiway")
+                .color('violet')
+                .attr({ x: 580, y: 100, w: 10, h: 80 })
+                .multiway(200, { UP_ARROW: -90, DOWN_ARROW: 90 });
+
+            //La bolita
+            Crafty.e("2D, DOM, Color, Collision")
+                .color('rgb(0,0,255)')
+                .attr({
+                    x: 300, y: 150, w: 10, h: 10,
+                    dX: Crafty.math.randomInt(2, 5),
+                    dY: Crafty.math.randomInt(2, 5)
+                })
+                .bind('UpdateFrame', function () {
+                    //Si toca el suelo o el techo
+                    if (this.y <= 0 || this.y >= 290)
+                        this.dY *= -1;
+
+                    //Si toca el lado derecho
+                    if (this.x > 590) {
+                        this.x = 300;
+                        Crafty("LeftPoints").each(function () {
+                            this.text(++this.points + " Points")
+                        });
+                    }
+                    if (this.x < 0) {
+                        this.x = 300;
+                        Crafty("RightPoints").each(function () {
+                            this.text(++this.points + " Points")
+                        });
+                    }
+
+                    this.x += this.dX;
+                    this.y += this.dY;
+                })
+                .onHit('Paddle', function () {
+                    this.dX *= -1;
+                });
+
+            //Tabla de puntuacion
+            Crafty.e("LeftPoints, DOM, 2D, Text")
+                .attr({ x: 20, y: 20, w: 100, h: 20, points: 0 })
+                .text("0 Puntos");
+            Crafty.e("RightPoints, DOM, 2D, Text")
+                .attr({ x: 515, y: 20, w: 100, h: 20, points: 0 })
+                .text("0 Puntos");
+        </script>
+    </div>
+</body>
+</html>

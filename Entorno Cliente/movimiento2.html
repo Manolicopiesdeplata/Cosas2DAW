@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.addEventListener("load", ()=>{
+            let imagen=document.createElement("img");
+            imagen.src="3a234f69e7535083ce6f515086a309f3.jpg";
+            imagen.style.position = "absolute";
+            imagen.style.width = "20px";
+            imagen.style.height = "20px";
+            document.body.appendChild(imagen);
+            document.addEventListener("mousemove", (movimiento)=>{
+                imagen.style.left = movimiento.clientX + "px";
+                imagen.style.top = movimiento.clientY + "px";
+            })
+        })
+    </script>
+</body>
+</html>

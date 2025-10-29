@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let color = prompt("pon un color en ingles o hexadecimal");
+        window.addEventListener("load", () =>{
+            let pinta = document.createElement("div");
+            pinta.style.border = "1px solid " + color;
+            pinta.style.borderRadius = "50%";
+            pinta.style.width = "10px";
+            pinta.style.height = "10px";
+            pinta.style.position = "fixed";
+            document.body.appendChild(pinta);
+            let dibujo = false;
+
+            document.addEventListener("mousemove", (movimiento)=>{
+                pinta.style.left = movimiento.clientX + "px";
+                pinta.style.top = movimiento.clientY + "px";
+
+                if(dibujo) {
+                    const puntito = document.createElement("div");
+                    puntito.style.width = "10px";
+                    puntito.style.height = "10px";
+                    puntito.style.borderRadius = "50%";
+                    puntito.style.position = "fixed";
+                    puntito.style.backgroundColor = color;
+                    puntito.style.left = movimiento.clientX + "px";
+                    puntito.style.top = movimiento.clientY + "px";
+                    document.body.appendChild(puntito);
+                }
+            })
+
+            document.addEventListener("mousedown", ()=>{
+                dibujo = true;
+            })
+            document.addEventListener("mouseup", ()=>{
+                dibujo = false;
+            })
+        })
+    </script>
+</body>
+</html>
