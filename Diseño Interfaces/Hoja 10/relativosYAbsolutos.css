@@ -8,10 +8,7 @@
      text-decoration: underline;
  }
 
- #caja1,
- #caja2,
- #caja3,
- #caja4 {
+ .caja {
      text-align: center;
      border: 10px solid pink;
      background-color: lightblue;
