@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Ejercicio posicionamiento float</title>
+    <style>
+        #contenedor {
+            border: 2px solid rgb(180, 180, 180);
+            background-color: #ccc;
+            font-size: larger;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        
+
+        .izquierda {
+            float: left;
+        }
+
+        .derecha {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!--CON OVERFLOW: HIDDEN OCULTAMOS CUALQUIER CORTE QUE SE HAGA EN EL CONTENEDOR-->
+    <!--ASI HACEMOS QUE EN TODO EL RECORRIDO DE IZQUIERDA A DERECHA SE MUESTRE EL FONDO-->
+    <div id="contenedor">
+        <span class="izquierda">&laquo; Anterior</span>
+        <span class="derecha">Siguiente &raquo;</span>
+    </div>
+</body>
+
+</html>
