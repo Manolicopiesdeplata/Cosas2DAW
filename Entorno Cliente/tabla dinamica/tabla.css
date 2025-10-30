@@ -2,6 +2,9 @@
     text-align: center;
     font-family: Helvetica;
 }
+h1 {
+    color: orange;
+}
 
 table, th, td{
     border: 2px solid orange;
