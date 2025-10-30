@@ -36,7 +36,7 @@ function aplicarCambios(){
     let pais = document.querySelector('#pais').value; //OBTIENE AHORA EL VALOR DE LO QUE HEMOS PUESTO EN LA EDICION DE PAIS A TRAVES DE SU ID
     let generoPrincipal = document.querySelector('#generoPrincipal').value; //OBTIENE AHORA EL VALOR DE LO QUE HEMOS PUESTO EN LA EDICION DE GENERO PRINCIPAL A TRAVES DE SU ID
     let anoNacimiento = document.querySelector('#anoNacimiento').value; //OBTIENE AHORA EL VALOR DE LO QUE HEMOS PUESTO EN LA EDICION DE AÑO NACIMIENTO A TRAVES DE SU ID
-    campoTr.innerHTML = //AQUI METEMOS EN EL TR LO QUE DECIA JUSTO ARRIBA
+    campoTr.innerHTML = //HACEMOS EL CAMBIO DE LOS CAMPOS PARA QUE AHORA SOLO SEAN TEXTO INDEDITABLE CON LOS NUEVOS VALORES APLICADOS
     '<td>' + nombre + '</td>' +
     '<td>' + pais + '</td>' +
     '<td>' + generoPrincipal + '</td>' +

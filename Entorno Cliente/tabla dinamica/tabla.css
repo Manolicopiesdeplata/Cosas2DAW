@@ -10,14 +10,18 @@ table, th, td{
     margin: auto;
 }
 th {
-    background-color: aliceblue;
+    background-color: #ffc686;
+    color: #2c1a0b;
+}
+td{
+    background-color: rgb(255, 226, 172);
 }
 td:hover {
-    background-color: black;
+    background-color: #2c1a0b;
     color: white;
 }
 .editar {
-    color: blue; cursor:pointer;
+    color: orange; cursor:pointer;
 }
 .editar:hover {
     color: red;
