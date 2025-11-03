@@ -1,9 +1,11 @@
 let edicion = false;
 let campoTr; //VARIABLE GLOBAL QUE USAREMOS PARA METER DATOS DENTRO DEL TR
+let guardarFila; //VARIABLE GLOBAL PARA GUARDAR EL ESTADO ANTES DE CAMBIAR LOS DATOS DE LA FILA
 function modoEdicion(campo) {
     if(edicion == false){
     let campoTd = campo.parentNode; //NODO TD
     campoTr = campoTd.parentNode; // NODO TR
+    guardarFila = campoTr.innerHTML; //CON ESTO GUARDAMOS EL ESTADO DE LA FILA SIN RETOCAR
     let contenedorFormulario = document.getElementById('contenedorFormulario'); //OBTIENE DEL ID DEL DIV
     let camposEnTr = campoTr.getElementsByTagName('td'); //OBTIENE TODOS LOS TD DE CADA TR
     let nombre = camposEnTr[0].textContent; //COGE EL CONTENIDO DEL CAMPO NOMBRE
@@ -30,7 +32,6 @@ function modoEdicion(campo) {
 }
 
 function aplicarCambios(){
-    guardado = campoTr.innerHTML;
     let contenedorFormulario = document.getElementById('contenedorFormulario'); //OBTIENE DEL ID DEL DIV
     let nombre = document.querySelector('#nombre').value; //OBTIENE AHORA EL VALOR DE LO QUE HEMOS PUESTO EN LA EDICION DE NOMBRE A TRAVES DE SU ID
     let pais = document.querySelector('#pais').value; //OBTIENE AHORA EL VALOR DE LO QUE HEMOS PUESTO EN LA EDICION DE PAIS A TRAVES DE SU ID
@@ -42,10 +43,11 @@ function aplicarCambios(){
     '<td>' + generoPrincipal + '</td>' +
     '<td>' + anoNacimiento + '</td>' +
     '<td><span class="editar" onclick="modoEdicion(this)">Editar</span></td>';
-
     contenedorFormulario.innerHTML = ""; //PARA QUE NO HAYA COSAS RARAS VOLVEMOS A VACIAR EL DIV PARA QUE NO APAREZCA EL FORMULARIO DESPUES DE HABER APLICADO LOS CAMBIOS
     edicion = false; //Y CON ESTO VOLVEMOS A DESHABILITAR LA EDICION
 }
 function cancelar(){
-    window.location.reload(); //FUNCION A RETOMAR ESPERO EN LOS PROXIMOS DIAS
+   campoTr.innerHTML = guardarFila; //AQUI VOLVEMOS AL ESTADO ANTERIOR GUARDADO EN NUESTRA VARIABLE GLOBAL
+   contenedorFormulario.innerHTML = ""; //QUITAMOS EL FORUMLARIO
+   edicion = false;// YA VOLVEMOS A LA PARTE DE VISTA SOLO
 }
