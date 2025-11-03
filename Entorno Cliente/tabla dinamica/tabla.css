@@ -2,6 +2,9 @@
     text-align: center;
     font-family: Helvetica;
 }
+body {
+    background-color: #fff1e0;
+}
 h1 {
     color: orange;
 }
