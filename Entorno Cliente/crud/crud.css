@@ -1,0 +1,8 @@
+#crud {
+    background-color: rgb(209, 241, 252);
+}
+
+:is(input,textarea ){
+    background: red;
+    color: white;
+}
