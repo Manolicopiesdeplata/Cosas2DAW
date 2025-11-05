@@ -6,7 +6,7 @@ addEventListener('load', () => {
     function toggleBox() {
         if (caja.style.display === "block") {
             caja.style.display = "none";
-            boton.textContent = "Mostar Caja";
+            boton.textContent = "Mostrar Caja";
         } else {
             caja.style.display = "block";
             boton.textContent = "Ocultar Caja";
