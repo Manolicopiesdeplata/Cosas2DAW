@@ -1,0 +1,57 @@
+body {
+    min-width: 700px;
+    max-width: 1000px;
+    margin: 0 0;
+}
+div {
+    box-sizing: border-box;
+}
+#rallitas {
+    width: 300px;
+    height: 375px;
+    background-color: pink;
+    background-image: url(imagenes/rayaBlanca.png);
+    position: relative;
+    float: left;
+    z-index: 1;
+}
+#puntitos {
+    width: 1000px;
+    height: 375px;
+    background-color: red;
+    background-image: url(imagenes/puntoBlanco.png);
+    position: absolute;
+    z-index: -2;
+}
+#textitos{
+    min-width: 550px;
+    min-height: 220px;
+    background-color: white;
+    position: absolute;
+    overflow: hidden;
+    top: 250px;
+    z-index: 12;
+}
+#ondulado {
+    width: 1000px;
+    height: 250px;
+    background-color: white;
+    background-image: url(imagenes/onda.png);
+    position: relative;
+    float: left;
+}
+h1{
+    margin-left: 0.3em;
+    letter-spacing: 0.3em;
+    display: block;
+}
+#maria{
+    letter-spacing: 0.2em;
+    font-family: Helvetica;
+    font-weight: lighter;
+}
+#regalo {
+    position: absolute;
+    bottom: 125px;
+    left: 325px;
+}
