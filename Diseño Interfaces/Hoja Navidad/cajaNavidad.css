@@ -41,7 +41,7 @@ div {
     float: left;
 }
 h1{
-    margin-left: 0.3em;
+    margin-left: 0.5em;
     letter-spacing: 0.3em;
     display: block;
 }
@@ -53,5 +53,5 @@ h1{
 #regalo {
     position: absolute;
     bottom: 125px;
-    left: 325px;
+    left: 340px;
 }
