@@ -6,7 +6,7 @@
     // Verificamos si el usuario ha iniciado sesión
     if (isset($_SESSION['id_usuario'])) {
         header('Location: index.php');
-        exit;
+        exit();
     }
 
     // Verificamos si existe la cookie de "token_recordarme"
@@ -21,7 +21,7 @@
         });*/
 
         foreach($usuarios as $usuario) {
-            if ($usuario['toekn'] == $token) {
+            if ($usuario['token'] == $token) {
                 $usuario_seleccionado = $usuario;
                 break;
             }
