@@ -1,11 +1,13 @@
 <?php
-    $intereses_guardados = '';
+    $intereses_guardados = isset($_COOKIE['profiler']) ? json_decode($_COOKIE['profiler'], true) : [];
     $categoria_favorita = null;
     $recomendacion = "Navega por la web para ver recomendaciones";
 
     if (!empty($intereses_guardados)) {
-        if (true) {
-            $recomendacion = "Vemos que te interesa mucho la categoría de <strong>?????</strong>. ¡Aquí tienes más!";
+        arsort($intereses_guardados);
+        $categoria_favorita = key($intereses_guardados);
+        if ($categoria_favorita) {
+            $recomendacion = "Vemos que te interesa mucho la categoría de <strong>$categoria_favorita</strong>. ¡Aquí tienes más!";
         }
     }
 ?>
@@ -35,6 +37,9 @@
     </ul>
 
     <hr>
+
+    <h3>Cookie 'perfil_intereses'</h3>
+    <p style="word-break: break-all;"><?= htmlspecialchars($_COOKIE['profiler'] ?? ''); ?></p>
     <a href="reset.php">(Borrar mi perfil de intereses)</a>
 </body>
 </html>

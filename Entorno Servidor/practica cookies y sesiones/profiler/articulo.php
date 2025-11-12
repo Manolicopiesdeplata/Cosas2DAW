@@ -6,6 +6,12 @@
     ];
 
     $categoria_actual = $_GET['categoria'] ?? 'general';
+
+    $intereses_guardados = isset($_COOKIE['profiler']) ? json_decode($_COOKIE['profiler'], true) : [];
+
+    $intereses_guardados[$categoria_actual] = isset($intereses_guardados[$categoria_actual]) ? $intereses_guardados[$categoria_actual]+1 : 1;
+
+    setcookie('profiler', json_encode($intereses_guardados), time() + 3600 * 24 * 7);
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +25,5 @@
     
     <hr>
     <a href="index.php">Volver a la portada</a>
-    
-    <h3>Cookie 'perfil_intereses'</h3>
-    <p style="word-break: break-all;">Aún no sabemos nada de ti</p> <!-- esto hay que rellenarlo -->
 </body>
 </html>
