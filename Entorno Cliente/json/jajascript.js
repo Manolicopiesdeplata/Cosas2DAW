@@ -45,14 +45,14 @@ window.addEventListener("load", () => {
           }
 
           let conNegrita = document.createElement('button');
-          conNegrita.innerHTML = '<button type="submit">ponerlo en negrita</button>';
+          conNegrita.innerHTML = '<button type="submit">negrita</button>';
           hilera.appendChild(conNegrita);
           conNegrita.addEventListener('click', ()=>{
             tablica.style.fontWeight = 'bolder';
           });
 
           let sinNegrita = document.createElement('button');
-          sinNegrita.innerHTML = '<button type="submit">quitar la negrita</button>';
+          sinNegrita.innerHTML = '<button type="submit">sin negrita</button>';
           hilera.appendChild(sinNegrita);
           sinNegrita.addEventListener('click', ()=>{
             tablica.style.fontWeight = 'lighter';
