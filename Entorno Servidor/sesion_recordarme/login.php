@@ -26,7 +26,7 @@
         }
 
         header('Location: index.php');
-        exit;
+        exit();
     }
 
     // Si hemos llegado aquí, significa que no hay sesión ni cookie válida
