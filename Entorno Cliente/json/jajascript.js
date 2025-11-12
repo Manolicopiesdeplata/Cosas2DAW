@@ -22,7 +22,7 @@ window.addEventListener("load", () => {
           let hilera = document.createElement("tr");
           for (let prop in objeto) {
             if (objeto[prop] instanceof Array) {
-              alert("si");
+              
             } else {
               let celda = document.createElement("td");
               celda.innerHTML = `${prop}: ${objeto[prop]}`;
