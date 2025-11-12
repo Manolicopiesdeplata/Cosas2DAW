@@ -43,6 +43,22 @@ window.addEventListener("load", () => {
               hilera.appendChild(celda);
             }
           }
+
+          let botoncito = document.createElement('button');
+          botoncito.innerHTML = '<button type="submit">ponerlo en negrita</button>';
+          hilera.appendChild(botoncito);
+          botoncito.addEventListener('click', ()=>{
+            tablica.style.fontWeight = 'bolder';
+          });
+
+          let botoncito2 = document.createElement('button');
+          botoncito2.innerHTML = '<button type="submit">quitar la negrita</button>';
+          hilera.appendChild(botoncito2);
+          botoncito2.addEventListener('click', ()=>{
+            tablica.style.fontWeight = 'lighter';
+          });
+          
+
           tablody.appendChild(hilera);
           tablica.appendChild(tablody);
           tablica.setAttribute("border", "2");
