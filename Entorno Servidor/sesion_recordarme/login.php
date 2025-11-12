@@ -15,11 +15,6 @@
         $token = $_COOKIE['token_recordarme'];
         $usuario_seleccionado = null;
 
-        /*array_map(function($usuario))
-        array_filter($usuarios, function ($usuario) use($token) {
-            return $usuario['token'] == $token;
-        });*/
-
         foreach($usuarios as $usuario) {
             if ($usuario['token'] == $token) {
                 $usuario_seleccionado = $usuario;
@@ -76,11 +71,11 @@
     <form method="POST">
         <div>
             <label>Usuario:</label>
-            <input type="text" name="usuario" value="admin">
+            <input type="text" name="usuario">
         </div>
         <div>
             <label>Contraseña:</label>
-            <input type="password" name="password" value="1234">
+            <input type="password" name="password">
         </div>
         <div>
             <input type="checkbox" name="recordarme">
