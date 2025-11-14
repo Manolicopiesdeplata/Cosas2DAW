@@ -223,7 +223,7 @@
                 $total_final +=  $total_casi;
             }
             echo '</table>';
-            echo $total_final;
+            echo $total_final . '€';
             ?>
         </div>
     </section>
