@@ -212,16 +212,18 @@
                 ]
             ];
             echo '<table>';
-            echo '<tr><th>Producto</th><th>Precio(€)</th><th>Cantidad</th><th>Total Parcial(€)</th></tr>';
+            echo '<tr><th>Producto</th><th>Cantidad</th><th>Precio (€)</th><th>Total Parcial(€)</th></tr>';
             foreach ($cesta as $key => $value) {
                 echo '<tr>';
                 echo "<td>$key</td>";
-                foreach ($value as $value => $value2) {
-                    echo "<td>$value2</td>";
-                }
-                echo "<td>" . $value2 * $value2 . "</td>";
+                echo "<td>" . $value['cantidad'] . "</td>";
+                echo "<td>". $value["precio"] . "</td>";
+                echo "<td>". $total_casi = $value["precio"] * $value['cantidad'] . "</td>";
                 echo '</tr>';
+                $total_final +=  $total_casi;
             }
+            echo '</table>';
+            echo $total_final;
             ?>
         </div>
     </section>
