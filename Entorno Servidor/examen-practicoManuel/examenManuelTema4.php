@@ -163,10 +163,19 @@ setcookie('noticias', $noticias['timestamp'], time() + (86000 * 7));
                         "timestamp" => time() - (60 * 60 * 24 * 7) // Hace 1 semana
                     ]
                 ];
-                if(isset($_COOKIE['noticias'])) {
-                    
-                }
 
+                $ultima_visita = $_COOKIE["noticias"] ?? 0;
+                echo '<ul>';
+                foreach($noticias as $noticia) {
+                    if($noticia['timestamp'] > $ultima_visita) {
+                    echo'<li class = "noticia-nueva">';
+                }
+                else {
+                    echo'<li>';
+                }
+                echo $noticia['titular'] . '</li>';
+            }
+            echo '</ul>';
             ?>
         </div>
     </section>
