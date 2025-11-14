@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-setcookie('noticias', $noticias['timestamp'], time() + (86000 * 7));
+setcookie('noticias', time(), time() + (86000 * 7));
 
 ?>
 <!doctype html>
