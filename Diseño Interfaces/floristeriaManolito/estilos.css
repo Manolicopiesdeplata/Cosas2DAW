@@ -1,0 +1,143 @@
+    @font-face {
+        font-family: "Pretty";
+        src: url("Pretty Summer.ttf");
+    }
+
+    #contenedor {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    * {
+        padding: 0;
+        margin: 5px;
+        font-family: 'Segoe UI';
+        box-sizing: border-box;
+    }
+
+    #logo {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        left: 30px;
+    }
+
+    #nombre {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    #nombre h3 {
+        font-family: Pretty;
+        font-size: 2.5em;
+        font-weight: normal;
+        color: darkgreen;
+    }
+
+    #nombre h4 {
+        display: inline-block;
+        background-color: khaki;
+        font-size: xx-large;
+        font-weight: normal;
+        color: darkgreen;
+        margin-top: 20px;
+    }
+
+    #menuH ul {
+        display: flex;
+        font-size: 1.5em;
+        list-style-type: none;
+        color: darkgreen;
+        margin-top: 20px;
+    }
+
+    #menuH li {
+        margin-left: 20px;
+    }
+
+    #menuH li:hover {
+        background-color: #A4D442;
+        color: white;
+    }
+
+    li .IG {
+        position: relative;
+        top: 3px;
+    }
+
+    #menuIzq {
+        float: left;
+    }
+
+    #menuIzq table {
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    #menuIzq td {
+        background-color: #A4D442;
+        border: 1px solid gray;
+        color: white;
+        height: 60px;
+        width: 130px;
+        font-size: 1.2em;
+    }
+
+    #menuIzq td:hover {
+        background-color: #FFC107;
+    }
+
+    #contenido {
+        float: left;
+    }
+
+    .ficha {
+        float: left;
+        border: 1px solid gray;
+    }
+
+    .ficha h6 {
+        text-align: center;
+        font-size: large;
+        font-weight: normal;
+        color: darkgreen;
+    }
+
+    .ficha p {
+        font-size: large;
+    }
+
+    .ficha div {
+        margin: 15px;
+    }
+
+    p img {
+        position: relative;
+        margin: 0;
+        top: 9px;
+    }
+
+    #pie {
+        clear: both;
+        background-color: #A4D442;
+    }
+
+    .pieIzq {
+        float: left;
+        width: 48%;
+    }
+
+    .pieDer {
+        float: right;
+        width: 48%;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    .pieDer .IG {
+        position: relative;
+        top: 4px;
+        right: 5px;
+    }
