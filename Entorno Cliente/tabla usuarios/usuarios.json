@@ -1,0 +1,11 @@
+{
+  "usuarios": [
+    {
+      "id": "89f9",
+      "nombre": "Fran",
+      "edad": "19",
+      "correo": "francr46@gmail.com",
+      "dni": "83157698E"
+    }
+  ]
+}

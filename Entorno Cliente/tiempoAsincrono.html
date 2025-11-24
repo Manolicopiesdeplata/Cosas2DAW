@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function esperarTiempos() {
+            let mensaje1 = await Promise.resolve("estoy resuelta!");
+            console.log(mensaje1);
+            let mensaje2 = await new Promise((resolver)=> {
+                setTimeout(() =>{resolver("Resuelvo en 3s")}, 3000);
+            });
+            console.log(mensaje2);
+            let mensaje3 = await new Promise((resolver)=> {
+                setTimeout(() =>{resolver("Resuelvo en 6s")}, 6000);
+            });
+            console.log(mensaje3);
+        }
+        esperarTiempos();
+    </script>
+</body>
+</html>
