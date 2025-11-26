@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="titulo text-center bg-info text-white p-2">
+            <h1>Micro-Shop</h1>
+        </div>
+        <div class="navbar bg-light p-2 justify-content-end">
+            <a href="#" class="text-black text-decoration-none me-3"><img src="iconos/person-fill-24.svg" class="icon">Registrarse</a>
+            <a href="#" class="text-black text-decoration-none me-3"><img src="iconos/sign-in-24.svg" class="icon">login</a>
+        </div>
+        <div class="d-block d-sm-none mt-2">
+                <div class="btn-group">
+                    <a class="btn btn-warning" href="index.html"><img src="iconos/home-24.svg" class="icon"></a>
+                    <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown">Productos</button>
+                    <ul class="dropdown-menu w-100">
+                        <li><a class="dropdown-item" href="#">Procesadores</a></li>
+                        <li><a class="dropdown-item" href="#">Memoria RAM</a></li>
+                        <li><a class="dropdown-item" href="#">Placas Base</a></li>
+                    </ul>
+                    <a class="btn btn-warning" href="presupuesto.html">Presupuesto</a>
+                    <a class="btn btn-info" href="galeria.html">Galería</a>
+                    <button type="button" class="btn btn-warning">Pedidos <span class="badge bg-info rounded-circle">3</span></button>
+                </div>
+            </div>
+        <div class="row mt-3 mb-3">
+            <div class="d-none d-sm-block col-12 col-sm-3">
+                <div class="btn-group-vertical w-100">
+                    <a class="btn btn-warning" href="index.html">Inicio</a>
+                    <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown">Productos</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Procesadores</a></li>
+                        <li><a class="dropdown-item" href="#">Memoria RAM</a></li>
+                        <li><a class="dropdown-item" href="#">Placas Base</a></li>
+                    </ul>
+                    <a class="btn btn-warning" href="presupuesto.html">Presupuesto</a>
+                    <a class="btn btn-info" href="galeria.html">Galería</a>
+                    <button type="button" class="btn btn-warning">Pedidos <span class="badge bg-info rounded-circle">3</span></button>
+                </div>
+            </div>
+            <div class="col-10 col-sm-9">
+                <p>El <span class="text-primary">Presupuesto</span> solicitado es el siguiente</p>
+                <table class="table border text-center">
+                    <thead class="border-0 border-bottom border-2 border-dark">
+                        <tr>
+                            <th class="border bg-warning">Producto</th>
+                            <th class="border bg-warning">Cantidad</th>
+                            <th class="border bg-warning">Precio</th>
+                            <th class="border bg-warning">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border">Procesador Intel Core I7</td>
+                            <td class="border">1</td>
+                            <td class="border">400€</td>
+                            <td class="border">400€</td>
+                        </tr>
+                        <tr>
+                            <td class="border">Memoria DDR4 8GB</td>
+                            <td class="border">2</td>
+                            <td class="border">50€</td>
+                            <td class="border">100€</td>
+                        </tr>
+                        <tr>
+                            <td class="border">Placa Base MSI</td>
+                            <td class="border">1</td>
+                            <td class="border">99€</td>
+                            <td class="border">99€</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="border fs-5 text-end text-danger pb-0 pt-0"><pre>Total</pre></td>
+                            <td class="border bg-warning text-danger h5">599€</td class="border">
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row bg-info text-center">
+            <p class="col-6 col-sm-4 col-md-3 pt-2 mt-2 h6">Quienes somos</p>
+            <p class="col-6 col-sm-4 col-md-3 pt-2 mt-2 h6">Trabaja con nosotros</p>
+            <p class="col-6 col-sm-4 col-md-3 pt-2 mt-2 h6">Tarifas de envio</p>
+            <p class="col-6 col-sm-4 col-md-3 pt-2 mt-2 h6">Localizar tu envio</p>
+            <p class="col-6 col-sm-4 col-md-3 pt-2 pb-3 mb-3 h6">Develve un producto</p>
+        </div>
+    </div>
+</body>
+
+</html>
