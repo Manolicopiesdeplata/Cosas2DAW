@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <h1>Primera Lista</h1>
+    <ul>
+        <li>Primer elemento</li>
+        <li>Segundo elemento</li>
+        <li>Tercer elemento</li>
+        <li>Cuarto elemento</li>
+    </ul>
+
+    <h1>Segunda Lista</h1>
+    <ul>
+        <li>Primer elemento</li>
+        <li>Segundo elemento</li>
+        <li>Tercer elemento</li>
+        <li>Cuarto elemento</li>
+    </ul>
+
+    <button>Quitar 1º lista</button>
+
+    <script>
+        $("button").click(function (event) {
+            $('ul:first').css('display', 'none');
+        });
+    </script>
+</body>
+
+</html>

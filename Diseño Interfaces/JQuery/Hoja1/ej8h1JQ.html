@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1>Project One está de vuelta</h1>
+        <p>A dia 3 de diciembre de 2025 project one ha vuelto con su nuevo temazo llamado upside down, hacoiendo
+            referencia a stranger things, despues de 7 años sin dar señales de vida el duo dinamico vuelve de las
+            sombras con nuevas sorpresas para el mundo del hardstyle</p>
+        <button>Ampliar texto</button>
+    </div>
+    <div>
+        <h1>Vuelven al escenario</h1>
+        <p>Hace unas semanas tambien se dio a conocer que volverian al escenario por lo alto en el Vroeger Was Alles
+            Beter(VWAB) el dia 3 de enero de 2026</p>
+        <button>Ampliar texto</button>
+    </div>
+    <div>
+        <h1>Album inminente?</h1>
+        <p>Todo apunta a que si, pronto lanzarán neuvo album, a mediados de mayo de 2026, lanzarán lo que será el
+            segundo episodio de Project one</p>
+        <button>Ampliar texto</button>
+    </div>
+    <script>
+        $("button").click(function (event) {
+            $(this).prev('p').css('font-size', '30px');
+        });
+    </script>
+</body>
+
+</html>

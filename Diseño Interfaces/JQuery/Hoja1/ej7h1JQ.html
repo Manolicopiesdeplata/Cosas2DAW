@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <h1>Peliculas</h1>
+    <ul>
+        <li class="infantil">Aladdin</li>
+        <li>Focus</li>
+        <li>Durmiendo con su enemigo</li>
+        <li class="infantil">Toy Story</li>
+        <li>Chantaje</li>
+        <li class="infantil">Vaiana</li>
+        <li>El padre de la novia</li>
+        <li class="infantil">Pocahontas</li>
+    </ul>
+
+    <button id="infantiles">Pelis infantiles</button>
+    <button id="resto">Resto de Pelis</button>
+
+    <script>
+        $("#infantiles").click(function (event) {
+            $('li.infantil').css({ 'background': 'blue', 'color': 'white', 'list-style-type': 'none' });
+            
+        });
+
+        $('#resto').click(function(event) {
+            $('li:not(.infantil)').css({'background': 'orange', 'color' : 'blue'});
+        });
+
+    </script>
+
+</body>
+
+</html>

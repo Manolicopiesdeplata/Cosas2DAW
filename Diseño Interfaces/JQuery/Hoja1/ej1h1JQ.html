@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <h1 class="p1">Este es el primer texto</h1>
+    <h1 class="p2">Este es el segundo texto</h1>
+
+    <script>
+        $(".p1").click(function (event) {
+            $('.p1').css({'background' : 'red', 'color' : 'white'});
+        });
+        $(".p2").click(function (event) {
+            $('.p2').css({'background' : 'green', 'color' : 'white'});
+        })
+    </script>
+</body>
+
+</html>
