@@ -44,9 +44,15 @@
     </table>
 
     <script>
-        $("tr").click(function (event) {
-            $('tr:even').css({'background' : 'orange'});
+        
+        $("table tr").click(function () {
+            if($(this).css('background').includes('rgb(255, 165, 0)'))
+                $(this).css('background', 'white');
+            else 
+                $(this).css({'background' : 'orange'});
+            
         });
+    
     </script>
 </body>
 </html>

@@ -14,19 +14,19 @@
 <body>
     <table>
         <tr>
-            <td class="f1">Fila 1</td>
+            <td id="f1">Fila 1</td>
         </tr>
         <tr>
-            <td class="f2">Fila 2</td>
+            <td id="f2">Fila 2</td>
         </tr>
     </table>
 
     <script>
-        $(".f1").click(function (event) {
-            $('.f1').css({'background' : 'red'});
+        $("#f1").click(function (event) {
+            $('#f1').css({'background' : 'red'});
         });
-        $(".f2").click(function (event) {
-            $('.f2').css({'background' : 'blue'});
+        $("#f2").click(function (event) {
+            $('#f2').css({'background' : 'blue'});
         });
     </script>
 </body>

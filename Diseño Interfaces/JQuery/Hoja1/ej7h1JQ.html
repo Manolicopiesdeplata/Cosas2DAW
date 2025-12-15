@@ -27,11 +27,12 @@
     <script>
         $("#infantiles").click(function (event) {
             $('li.infantil').css({ 'background': 'blue', 'color': 'white', 'list-style-type': 'none' });
-            
+            $('li:not(.infantil)').css({'background' : 'white', 'color' : 'black'});
         });
 
         $('#resto').click(function(event) {
             $('li:not(.infantil)').css({'background': 'orange', 'color' : 'blue'});
+            $('li.infantil').css({ 'background': 'white', 'color': 'black', 'list-style-type': 'disc' });
         });
 
     </script>
