@@ -1,5 +1,5 @@
 <?php
-    require_once 'config.php';
+    require_once __DIR__ . '/config/config.php';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'] ?? '';
 
@@ -8,17 +8,17 @@
             if (isset($_POST['id'])) {
                 $temardoController->borrarTemardo($_POST['id']);
             }
-            exit();
+            break;
 
         case 'anadir':
             if (isset($_POST['dj'], $_POST['tema'])) {
                 $temardoController->anadirTemardo($_POST['dj'], $_POST['tema']);
             }
-            exit();
+            break;
 
         default:
             echo 'Acción POST no válida';
-            exit();
+            break;
     }
 }
 
@@ -34,7 +34,7 @@ switch ($action) {
         break;
 
     case 'anadir_temardo':
-        require_once 'anadir.php';
+        require_once __DIR__ . '/views/anadir.php';
         break;
 
     default:

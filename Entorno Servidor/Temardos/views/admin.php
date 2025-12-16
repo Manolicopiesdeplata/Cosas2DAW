@@ -12,7 +12,7 @@
     <ul>
         <?php foreach ($temardos as $temardo): ?>
             <li><?= htmlspecialchars($temardo->getDj()) ?> - <?= htmlspecialchars($temardo->getTema()) ?>
-                <form method="POST" action="index.php" style="display: inline;">
+                <form method="POST" action="../index.php" style="display: inline;">
                     <input type="hidden" name="id" value="<?= $temardo->getId() ?>">
                     <input type="hidden" name="action" value="borrar">
                     <button type="submit">Eliminar</button>
@@ -20,7 +20,7 @@
             </li>
         <?php endforeach; ?>
     </ul>
-    <a href="index.php">Vover a recomendacion de temardos</a>
+    <a href="../index.php">Vover a recomendacion de temardos</a>
 </body>
 
 </html>

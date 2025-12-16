@@ -1,7 +1,7 @@
 <?php
 class Database
 {
-    private $sqlite_file = 'database.sqlite';
+    private $sqlite_file = __DIR__ . '/../data/database.sqlite';
     private static $connection;
 
     public function __construct()

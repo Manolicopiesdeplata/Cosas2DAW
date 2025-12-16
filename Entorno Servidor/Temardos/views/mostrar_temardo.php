@@ -15,7 +15,7 @@
             <p>No hay temardos pa ti sorry</p>
         <?php endif; ?>
     </div>
-    <p>Mira todos los temardos que te podemos recomendar: <a href="index.php?action=admin">Admin</a></p>
-    <p>Aqui para añadir temardos: <a href="index.php?action=anadir_temardo">Añadir</a></p>
+    <p>Mira todos los temardos que te podemos recomendar: <a href="../index.php?action=admin">Admin</a></p>
+    <p>Aqui para añadir temardos: <a href="../index.php?action=anadir_temardo">Añadir</a></p>
 </body>
 </html>

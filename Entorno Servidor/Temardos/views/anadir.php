@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" action="index.php">
+    <form method="POST" action="../index.php">
         <input type="hidden" name="action" value="anadir">
         <label for="dj">DJ:</label>
         <input type="text" id="dj" name="dj" required>
