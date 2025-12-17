@@ -13,15 +13,14 @@
                 <strong><?php echo htmlspecialchars($oferta->getEmpresa()); ?></strong> (<?php echo htmlspecialchars($oferta->getUbicacion()); ?>)<br>
                 <strong>Descripción del puesto: </strong><?php echo htmlspecialchars($oferta->getDescripcion()); ?><br>
                 <strong>Salario: </strong><?php echo htmlspecialchars($oferta->getSalario()); ?><br>
-                <form action="index.php" method="POST">
+                <form action="index.php?action=borrar_oferta" method="POST">
                     <input type="hidden" name="id" value="<?php echo $oferta->getId(); ?>">
-                    <input type="hidden" name="action" value="borrar">
-                    <a href="../index.php?action=verOferta&id=<?= $oferta->getId() ?>" style="margin-right: 10px;">Ver detalles de la oferta</a>
+                    <a href="index.php?action=ver_oferta&id=<?php echo $oferta->getId(); ?>" style="margin-right: 10px;">Ver detalles de la oferta</a>
                     <input type="submit" style="background-color: #dc3545; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;" value="Eliminar oferta">
                 </form>
             </p>
         </div>
     <?php endforeach; ?>
-    <a href="../index.php?action=crearOferta">Crear nueva oferta de trabajo</a>
+    <a href="index.php?action=ir_crear_oferta">Crear nueva oferta de trabajo</a>
 </body>
 </html>

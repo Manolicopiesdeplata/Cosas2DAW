@@ -7,8 +7,7 @@
 </head>
 <body>
     <h1>Nueva oferta de trabajo</h1>
-    <form action="../index.php" method="POST">
-        <input type="hidden" name="action" value="crear">
+    <form action="index.php?action=crear_oferta" method="POST">
         <label for="descripcion">Descripción:</label><br>
         <input type="text" id="descripcion" name="descripcion" required><br><br>
         <label for="salario">Salario:</label><br>
@@ -19,6 +18,6 @@
         <input type="text" id="ubicacion" name="ubicacion" required><br><br>
         <input type="submit" style="padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;" value="Crear oferta">
     </form>
-    <p>Volver al <a href="../index.php">listado de ofertas</a></p>
+    <p>Volver al <a href="index.php?action=listar_ofertas">listado de ofertas</a></p>
 </body>
 </html>
