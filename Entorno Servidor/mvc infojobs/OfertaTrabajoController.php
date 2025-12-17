@@ -8,7 +8,8 @@
         }
         
         public function verOferta($id) {
-
+            $oferta = OfertaTrabajo::getById($id);
+            require_once 'ver_oferta.php';
         }
         public function borrarOferta($id) {
             $oferta = new OfertaTrabajo($id, '', '', '', '');

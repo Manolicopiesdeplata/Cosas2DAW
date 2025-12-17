@@ -16,7 +16,7 @@
                 <form action="index.php" method="POST">
                     <input type="hidden" name="id" value="<?php echo $oferta->getId(); ?>">
                     <input type="hidden" name="action" value="borrar">
-                    <a href="ver_oferta.php?id=<?php echo $oferta->getId(); ?>" style="margin-right: 10px;">Ver detalles de la oferta</a>
+                    <a href="index.php?action=verOferta&id=<?= $oferta->getId() ?>" style="margin-right: 10px;">Ver detalles de la oferta</a>
                     <input type="submit" style="background-color: #dc3545; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold;" value="Eliminar oferta">
                 </form>
             </p>

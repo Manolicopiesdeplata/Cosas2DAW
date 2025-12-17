@@ -32,6 +32,6 @@ switch ($action) {
         break;
 
     case 'verOferta':
-        require_once 'ver_oferta.php';
+        $ofertaTrabajoController->verOferta($_GET['id']);
         break;
 }

@@ -1,19 +1,4 @@
-<?php
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        require_once 'OfertaTrabajo.php';
 
-        $id = $_GET['id'] ?? null;
-        if ($id) {
-            $oferta = OfertaTrabajo::getById($id);
-        } else {
-            header('Location: index.php');
-            exit();
-        }
-    } else {
-        header('Location: index.php');
-        exit();
-    }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
