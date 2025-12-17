@@ -1,7 +1,7 @@
 <?php
 
-    require_once 'Database.php';
-    require_once 'config.php';
+    require_once __DIR__ . '/../config/Database.php';
+    require_once __DIR__ . '/../config/config.php';
 
     class OfertaTrabajo {
         private $id;

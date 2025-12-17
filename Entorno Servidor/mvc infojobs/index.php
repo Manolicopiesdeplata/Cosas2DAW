@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once __DIR__ . '/config/config.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'] ?? '';
 
@@ -28,7 +28,7 @@ switch ($action) {
         break;
 
     case 'crearOferta':
-        require_once 'formulario_ofertas.php';
+        require_once __DIR__ . '/views/formulario_ofertas.php';
         break;
 
     case 'verOferta':

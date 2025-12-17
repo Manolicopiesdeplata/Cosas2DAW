@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +19,6 @@
     <?php else: ?>
         <p>Oferta no encontrada.</p>
     <?php endif; ?>
-    <p><a href="index.php">Volver al listado de ofertas</a></p>
+    <p><a href="../index.php">Volver al listado de ofertas</a></p>
 </body>
 </html>
