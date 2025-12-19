@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @font-face {
+            font-family: 'pretty-summer';
+            src: url(fonts/Pretty\ Summer\ -\ TTF.ttf);
+        }
+        @font-face {
+            font-family: 'aoc';
+            src: url(fonts/ArtOfCreation_Final-Regular.ttf);
+        }
+        .pretty {
+            font-family: 'pretty-summer';
+        }
+        #footerNombre {
+            font-family: 'aoc';
+        }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-arial">
+
+    <header class="bg-linear-100 from-green-600 to-green-900 text-white py-6">
+        <input type="checkbox" id="menu-toggle" class="hidden peer">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="pretty text-3xl font-light">CiezAdventures</h1>
+            <label for="menu-toggle" class="md:hidden cursor-pointer">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            </label>
+            <nav class="hidden md:block">
+                <ul class="flex flex-wrap justify-center gap-4 md:gap-6">
+                    <li><a href="#actividades" class="hover:text-gray-200">Actividades</a></li>
+                    <li><a href="#nosotros" class="hover:text-gray-200">Nosotros</a></li>
+                    <li><a href="#contacto" class="hover:text-gray-200">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-64 md:hidden bg-linear-100 from-green-600 to-green-900">
+            <ul class="flex flex-col items-center gap-4 py-6">
+                <li><a href="#actividades">Actividades</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="bg-[url(img/ciezaGrande.jpg)] bg-cover bg-no-repeat text-white py-30">
+        <div class="mx-auto text-center px-4">
+            <h2 class="pretty text-4xl md:text-5xl font-bold mb-4">¡Aventuras intrepidas por Cieza!</h2>
+            <p class="text-lg md:text-xl mb-8">Si quieres realmente pasartelo bien, no lo dudes mas, este es tu sitio.</p>
+            <a href="#actividades" class="bg-linear-100 from-green-600 to-green-900 text-white font-bold px-6 py-3 rounded shadow hover:from-green-900 hover:to-green-600 transition">Ver Actividades</a>
+        </div>
+    </section>
+
+    <section id="actividades" class="py-20">
+        <div class="mx-auto px-4">
+            <h3 class="pretty text-3xl font-light text-center mb-12">Nuestras Actividades</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded shadow p-6 hover:shadow-lg transition">
+                    <img src="img/floracionCieza.jpg" alt="Cueva" class="w-full h-auto rounded mb-4 block">
+                    <h4 class="pretty text-xl font-semibold mb-2">Cueva del arco</h4>
+                    <p>Visita la emblematica cueva del arco en el cañon de almadenes y sus enrevesadas cuevas con nuestros guias.</p>
+                </div>
+                <div class="bg-white rounded shadow p-6 hover:shadow-lg transition">
+                    <img src="img/atalayaCieza.jpg" alt="Senderismo" class="w-full h-auto rounded mb-4 block">
+                    <h4 class="pretty text-xl font-semibold mb-2">Senderismo en floracion</h4>
+                    <p>Con la tematica de la floracion de Cieza traemos rutas de senderismo hermosas pasando por campos de color rosa vivo.</p>
+                </div>
+                <div class="bg-white rounded shadow p-6 hover:shadow-lg transition">
+                    <img src="img/rioCieza.jpg" alt="Rio Segura" class="w-full h-auto rounded mb-4 block">
+                    <h4 class="pretty text-xl font-semibold mb-2">Descenso por el Rio Segura</h4>
+                    <p>Metete en aguas salvajes del rio Segura, nuestra actividad estrella con monitores que os levantarán el animo hasta las nubes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="bg-gray-100 py-20">
+        <div class="mx-auto px-4 max-w-4xl text-center">
+            <h3 class=" pretty text-3xl font-light mb-6">Sobre Nosotros</h3>
+            <p class="text-lg mb-4">Somos una pequeña empresa con muchisima pasion en entregar unas actividades inolvidables y culturales de este maravilloso pueblo y sus alrededores, nuestro amplio equipo os dará un servicio que se ven en pocos lugares.</p>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20">
+        <div class="mx-auto px-4 max-w-2xl">
+            <h3 class="pretty text-3xl font-light text-center mb-8">Contacto</h3>
+            <form class="bg-white rounded shadow p-8 space-y-4" method="get" action="https://www.youtube.com/watch?v=OgIRAjnnJzI">
+                <label for="nombre" class="block font-semibold mb-2">Nombre</label>
+                <input type="text" id="nombre" placeholder="Tu nombre" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                <label for="email" class="block font-semibold mb-2">Email</label>
+                <input type="email" id="email" placeholder="Correo electronico" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                <label for="mensaje" class="block font-semibold mb-2">Mensaje</label>
+                <textarea id="mensaje" rows="5" placeholder="Escriba para cualquier caso" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                <button type="submit" class="bg-linear-100 from-green-600 to-green-900 text-white font-semibold px-6 py-3 rounded shadow hover:from-green-900 hover:to-green-600 transition cursor-pointer">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-linear-100 from-green-600 to-green-900 text-white py-6 mt-12">
+        <div class="mx-auto text-center">
+            <p class="text-xl">&copy;2025 <span id="footerNombre" class="text-orange-500 ">Manuel Lopez Medina.</span></p>
+        </div>
+    </footer>
+
+</html>
