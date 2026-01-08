@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tutoriales {
+            border: 5px solid black;
+            margin: 15px;
+            padding: 15px;
+        }
+
+        span {
+            color: blue;
+        }
+
+        #boton {
+            background-color: orange;
+            border-radius: 0px;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        #boton2 {
+            background-color: blue;
+            border-radius: 0px;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <div id="tutoriales">
+        <h1>Tutoriales sobre <span>Diseño Web</span></h1>
+        <ul>
+            <li><a href="https://www.w3schools.com/html/">HTML</a></li>
+            <li><a href="https://uniwebsidad.com/libros/css">Introducción a CSS</a></li>
+            <li><a href="https://www.w3schools.com/bootstrap4/default.asp">Bootstrap 4:</a></li>
+            <li><a href="https://uniwebsidad.com/libros/fundamentos-jquery">Fundamentos de JQuery</a></li>
+            <li><a href="https://www.w3schools.com/jquery/default.asp">Tutorial de jQuery</a></li>
+        </ul>
+
+        <button id="boton">RESALTAR TUTORIALES UNIWEBSIDAD</button>
+        <button id="boton2">RESALTAR TUTORIALES W3SCHOOLS</button>
+    </div>
+    <script>
+        $.expr[':'].uniwebsidad = function (elem, i, meta) {
+            return $(elem).attr('href').toLowerCase().startsWith('https://uniwebsidad.com');
+        }
+        $.expr[':'].w3schools = function (elem, i, meta) {
+            return $(elem).attr('href').toLowerCase().startsWith('https://www.w3schools.com');
+        }
+
+        $('#boton').click(function (event) {
+            $('a').css({'background' : '', 'color' : ''});
+            $('a:uniwebsidad').css({"background" : "orange", "color" : "yellow"});
+        });
+        $('#boton2').click(function (event) {
+            $('a').css({'background' : '', 'color' : ''});
+            $('a:w3schools').css({"background" : "lightblue", "color" : "green"});
+        });
+
+    </script>
+</body>
+
+</html>

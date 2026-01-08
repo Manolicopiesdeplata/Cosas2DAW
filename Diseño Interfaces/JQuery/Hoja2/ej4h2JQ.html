@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+    <button id="elemento">Seleccionar segundo elemento</button>
+
+    <script>
+        $.expr[':'].segundo = function(elem, i, meta) {
+            return $(elem).text().toLowerCase().includes('2');
+        }
+        $('#elemento').click(function(event) {
+                $('ul li:segundo').css('color', 'orange');
+        });
+    </script>
+</body>
+</html>
