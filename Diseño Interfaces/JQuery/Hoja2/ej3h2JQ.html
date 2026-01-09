@@ -35,26 +35,37 @@
         </ul>
         <h3>Web de procedencia</h3>
         <select id="seleccion">
-            <option value="uniwebsidad">Uniwebsidad</option>
-            <option value="w3schools">W3Schools</option>
+            <option value="uniwebsidad">uniwebsidad</option>
+            <option value="w3schools">w3Schools</option>
         </select>
         <button id="filtrar">Filtrar</button>
     </div>
 
     <script>
         $.expr[':'].filtro = function(elem, i, meta) {
-            let seleccion = $('#seleccion').val();
-            return $(elem).attr('href').toLowerCase().includes(seleccion);
+            let ref='';
+            switch(meta[3]) {
+                case 'uniwebsidad':
+                    ref='https://uniwebsidad.com';
+                    break;
+                case 'w3schools':
+                    ref='https://www.w3schools.com';
+                    break;
+            }
+            return $(elem).attr('href').toLowerCase().startsWith(ref);
+            /*let seleccion = $('#seleccion').val();
+            return $(elem).attr('href').toLowerCase().includes(seleccion);*/
         };
 
         $('#filtrar').click(function(event) {
             $('a').css({'background' : '', 'color' : ''});
-
-            if($('#seleccion').val() === 'uniwebsidad') {
+            let web = $('#seleccion').val();
+            $('a:filtro('+web+')').css({'background' : 'blue', 'color' : 'white'});
+            /*if($('#seleccion').val() === 'uniwebsidad') {
                 $('a:filtro').css({'background' : 'orange', 'color' : 'red'});
             }else if($('#seleccion').val() === 'w3schools') {
                 $('a:filtro').css({'background' : 'lightblue', 'color' : 'green'});
-            }
+            }*/
         });
 
     </script>

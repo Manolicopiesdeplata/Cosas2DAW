@@ -16,7 +16,8 @@
 
     <script>
         $.expr[':'].segundo = function(elem, i, meta) {
-            return $(elem).text().toLowerCase().includes('2');
+            return $(elem).is(':nth-child(2)');
+            /*return $(elem).text().toLowerCase().includes('2');*/
         }
         $('#elemento').click(function(event) {
                 $('ul li:segundo').css('color', 'orange');
