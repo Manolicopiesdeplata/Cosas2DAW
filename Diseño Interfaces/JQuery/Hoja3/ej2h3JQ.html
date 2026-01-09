@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tutoriales {
+            border: 5px solid black;
+            margin: 15px;
+            padding: 15px;
+        }
+
+        span {
+            color: blue;
+        }
+
+        #resaltar {
+            color: blue;
+        }
+
+        h3 {
+            color: blue;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <div id="tutoriales">
+        <h1>Tutoriales sobre <span>Diseño Web</span></h1>
+        <ul>
+            <li><a href="https://www.w3schools.com/html/">HTML</a></li>
+            <li><a href="https://uniwebsidad.com/libros/css">Introducción a CSS</a></li>
+            <li><a href="https://www.w3schools.com/bootstrap4/default.asp">Bootstrap 4:</a></li>
+            <li><a href="https://uniwebsidad.com/libros/fundamentos-jquery">Fundamentos de JQuery</a></li>
+            <li><a href="https://www.w3schools.com/jquery/default.asp">Tutorial de jQuery</a></li>
+        </ul>
+        <h3>Web de procedencia</h3>
+        <select id="seleccion">
+            <option value="uniwebsidad">uniwebsidad</option>
+            <option value="w3schools">w3Schools</option>
+        </select>
+        <h3>Color de fondo</h3>
+        <select id="fondo">
+            <option value="blue">Azul</option>
+            <option value="orange">Naranja</option>
+        </select>
+        <h3>Color de texto</h3>
+        <select id="texto">
+            <option value="blue">Azul</option>
+            <option value="orange">Naranja</option>
+        </select>
+        <button id="resaltar">Resaltar</button>
+
+        <script>
+            $.expr[':'].filtro = function(elem, i, meta) {
+                let ref='';
+                switch(meta[3]) {
+                    case 'uniwebsidad':
+                        ref='https://uniwebsidad.com';
+                        break;
+                    case 'w3schools':
+                        ref='https://www.w3schools.com';
+                        break;
+                }
+                return $(elem).attr('href').toLowerCase().startsWith(ref);
+            }
+
+            $.fn.filtro = function(fondo, texto) {
+                return $(this).css({'background' : fondo, 'color' : texto});
+            }
+            $('#resaltar').click(function(event) {
+                $('a').css({'background' : '', 'color' : ''});
+                let web = $('#seleccion').val();
+                let fondo = $('#fondo').val();
+                let texto = $('#texto').val();
+                $('a:filtro('+web+')').filtro(fondo, texto);
+            })
+        </script>
+</body>
+
+</html>
