@@ -55,9 +55,9 @@
         <button id="resaltar">Resaltar</button>
 
         <script>
-            $.expr[':'].filtro = function(elem, i, meta) {
+            $.fn.filtro = function(web, fondo, texto) {
                 let ref='';
-                switch(meta[3]) {
+                switch(web) {
                     case 'uniwebsidad':
                         ref='https://uniwebsidad.com';
                         break;
@@ -65,19 +65,19 @@
                         ref='https://www.w3schools.com';
                         break;
                 }
-                return $(elem).attr('href').toLowerCase().startsWith(ref);
-            }
-
-            $.fn.filtro = function(fondo, texto) {
-                return $(this).css({'background' : fondo, 'color' : texto});
+                return this.each(function() {
+                    if($(this).attr('href').toLowerCase().startsWith(ref)) {
+                        $(this).css({'background' : fondo, 'color' : texto});
+                    }
+                });
             }
             $('#resaltar').click(function(event) {
                 $('a').css({'background' : '', 'color' : ''});
                 let web = $('#seleccion').val();
                 let fondo = $('#fondo').val();
                 let texto = $('#texto').val();
-                $('a:filtro('+web+')').filtro(fondo, texto);
-            })
+                $('a').filtro(web, fondo, texto);
+            });
         </script>
 </body>
 

@@ -54,14 +54,14 @@
             }
             return $(elem).attr('href').toLowerCase().startsWith(ref);
         }
-        $.fn.resaltar = function (fondo, texto) {
-            return $(this).css({'background' : fondo, 'color' : texto});
+        $.fn.resaltar = function() {
+            return $(this).css({'background' : 'orange', 'color' : 'white'});
         }
 
         $('#resaltar').click(function(event) {
             $('a').css({'background' : '', 'color' : ''});
             let web = $('#seleccion').val();
-            $('a:filtro('+web+')').resaltar('orange', 'white');
+            $('a:filtro('+web+')').resaltar();
         })
 
 
