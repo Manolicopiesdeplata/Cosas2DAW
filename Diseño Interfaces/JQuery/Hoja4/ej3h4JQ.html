@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <style>
+        .horizontal {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="border border-5 border-primary">
+        <ul id="biblioteca">
+            <li class="h4">SERIES
+                <ul class="h5 fw-light">
+                    <li>Prison Break</li>
+                    <li>Scandal</li>
+                    <li>Revenge</li>
+                    <li>Juego De Tronos</li>
+                </ul>
+            </li>
+            <li class="h4">PELICULAS
+                <ul class="h5 fw-light">
+                    <li>Avatar</li>
+                    <li>Fast And Furious</li>
+                    <li>La Cruda Realidad</li>
+                    <li>Chantaje</li>
+                </ul>
+            </li>
+            <li class="h4">LIBROS
+                <ul class="h5 fw-light">
+                    <li>Tiranosaurio</li>
+                    <li>El codice maya</li>
+                    <li>El ultimo caton</li>
+                    <li>La Princesa</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <button id="alinear" class="btn bg-info">Alinear Horizontalmente</button>
+    <script>
+        $.fn.impares = function (liPrincipal, fondo) {
+            return $(liPrincipal).css('background', fondo);
+        }
+        $('#alinear').click(function (event) {
+            $('#biblioteca > li').addClass('horizontal');
+            let principal = $('#biblioteca > li > ul li:odd');
+            let fondo = 'lightblue';
+            $('li').impares(principal, fondo);
+        });
+    </script>
+</body>
+
+</html>
