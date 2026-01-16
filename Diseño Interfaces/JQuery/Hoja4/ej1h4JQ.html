@@ -21,21 +21,21 @@
     <p>Este es un parrafo <b>NORMAL</b></p>
     <p class="especial">Este es un parrafo <b>ESPECIAL</b></p>
     <h5 class="text-bold">Elije el color</h5>
-    <select id="color" class="form-select w-25">
-        <option value="text-dark">Negro</option>
-        <option value="text-light">Blanco</option>
-        <option value="text-danger">Rojo</option>
-        <option value="text-primary">Azul</option>
-        <option value="text-warning">Amarillo</option>
-        <option value="text-success">Verde</option>
+    <select id="color" class="form-control w-25">
+        <option>black</option>
+        <option>white</option>
+        <option>red</option>
+        <option>blue</option>
+        <option>yellow</option>
+        <option>green</option>
     </select>
     <br>
-    <button id="cambiar" class="btn-primary">Cambiar parrafos especiales</button>
+    <button id="cambiar" class="btn btn-primary">Cambiar parrafos especiales</button>
     <script>
         $('#cambiar').click(function(event) {
-            $('.especial').removeClass('text-dark text-light text-danger text-primary text-warning text-success');
+            $('.especial').css('color', '');
             let colorTexto = $('#color').val();
-            $('.especial').addClass(colorTexto);
+            $('.especial').css('color',colorTexto);
         });
     </script>
 </body>

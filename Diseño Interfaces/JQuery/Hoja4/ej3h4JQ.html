@@ -50,15 +50,19 @@
     <br>
     <button id="alinear" class="btn bg-info">Alinear Horizontalmente</button>
     <script>
-        $.fn.impares = function (liPrincipal, fondo) {
+        /*$.fn.impares = function (liPrincipal, fondo) {
             return $(liPrincipal).css('background', fondo);
-        }
+        }*/
         $('#alinear').click(function (event) {
             $('#biblioteca > li').addClass('horizontal');
-            let principal = $('#biblioteca > li > ul li:odd');
+            impares('#biblioteca > li > ', 'lightBlue');
+            /*let principal = $('#biblioteca > li > ul li:even');
             let fondo = 'lightblue';
-            $('li').impares(principal, fondo);
+            $('li').impares(principal, fondo);*/
         });
+        function impares(lista, fondo) {
+            return $(lista + 'ul li:even').css({'background' : fondo});
+        }
     </script>
 </body>
 

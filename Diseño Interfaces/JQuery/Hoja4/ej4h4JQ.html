@@ -52,25 +52,21 @@
     <button id="normal" class="btn bg-info d-none">Volver a estado normal</button>
 
     <script>
-        $.fn.impares = function (liPrincipal, fondo) {
-            return $(liPrincipal).css('background', fondo);
-        }
         $('#alinear').click(function (event) {
             $('#biblioteca > li').addClass('horizontal');
-            let principal = $('#biblioteca > li > ul li:odd');
-            let fondo = 'lightblue';
-            $('#biblioteca > li').impares(principal, fondo);
+            impares('#biblioteca > li > ', 'lightBlue');
             $('#alinear').addClass('d-none');
             $('#normal').removeClass('d-none');
         });
         $('#normal').click(function (event) {
             $('#biblioteca > li').removeClass('horizontal');
-            let principal = $('#biblioteca > li > ul li:odd');
-            let fondo = 'none';
-            $('#biblioteca > li').impares(principal, fondo);
+            impares('#biblioteca > li > ', 'none');
             $('#normal').addClass('d-none');
             $('#alinear').removeClass('d-none');
         });
+        function impares(lista, fondo) {
+            return $(lista + 'ul li:even').css({'background' : fondo});
+        }
     </script>
 </body>
 
