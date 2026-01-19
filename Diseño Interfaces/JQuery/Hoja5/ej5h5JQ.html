@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Videoclub</title>
+	<script src="https://code.jquery.com/jquery.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style>
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1>VIDEOCLUB</h1>
+	<ul id="videoclub">
+		<li><b>ACCIÓN</b>
+			<ul>
+				<li>Logan</li>
+				<li>Fast and Furious 8</li>
+				<li>La Momia</li>
+				<li>Geo-Tormenta</li>
+			</ul>
+		</li>
+		<li><b>MISTERIO</b>
+			<ul>
+				<li>Lo que la verdad esconde</li>
+				<li>Asesinato en el Orient Express</li>
+				<li>Los otros</li>
+				<li>El silencio de los corderos</li>
+			</ul>
+		</li>
+		<li><b>INFANTIL</b>
+			<ul>
+				<li>Mascotas</li>
+				<li>Cigueñas</li>
+				<li>Vaiana</li>
+				<li>Pocahontas</li>
+			</ul>
+		</li>
+		<li><b>MUSICAL</b>
+			<ul>
+				<li>La Bella y la Bestia</li>
+				<li>El mago de oz</li>
+				<li>La batalla del año</li>
+				<li>Canta</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<script>
+	$(document).ready(function() {
+		$('ul li').click(function() {
+			if($(this).children('ul').is(':visible')) {
+				$(this).children('ul').hide();
+			}else{
+				$(this).children('ul').show();
+			}
+		});
+	});
+</script>
+</body>
+</html>
