@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+
+		li {font-size:1.2em;
+			margin-bottom:15px;}
+
+		.infantil {color:blue;}
+		.comedia {color:green;}
+		.misterio {color:orange;}
+
+		#combo {
+			padding:15px;
+     		margin-left:30px;
+      		background:lightgrey;
+      		font-size:1.2em;
+			width:200px;
+		}
+		#boton {
+      		padding:15px;
+     		margin-left:30px;
+      		background:lightskyblue;
+      		font-size:1.2em;
+    	}
+
+		#color {font-size: 1.1em;}
+
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(function(){
+
+			$("#boton").click(function(event) {
+				var color = $('#color').val();
+				$('ul li:color('+color+')').parpadear(); 
+			}); 	
+			
+		});
+
+	</script>
+	<title>Ejercicio 2</title>
+</head>
+<body>
+	<h3> Películas </h3>
+	<ul>
+		<li class="infantil">Aladdin</li>
+		<li class="comedia">Focus</li>
+		<li class="misterio">Durmiendo con su enemigo</li>
+		<li class="infantil">Toy Story</li>
+		<li class="misterio">Chantaje</li>
+		<li class="infantil">Vaiana</li>
+		<li class="comedia">El padre de la novia</li>
+		<li class="infantil">Pocahontas</li>
+	</ul>
+
+	<div class="form-group" id="combo">
+		<label for="sel1">COLOR:</label>
+		<select class="form-control" id="color">
+		   <option><h3>azul</h3></option>
+		   <option><h3>verde</h3></option>
+		   <option><h3>naranja</h3></option>
+		</select>
+		 
+		 <br>
+		 <br>
+		 <input type="button" id="boton" value="Parpadear"/> 
+	 </div>
+		
+</body>
+</html>
