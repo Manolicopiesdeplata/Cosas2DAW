@@ -33,6 +33,21 @@
 	<script type="text/javascript">
 		$(function(){
 
+
+			$.expr[':'].color = function (elem, i, meta) { 
+				let color = meta[3];
+				let elemColor = $(elem).css('color');
+				let colores = {
+					azul: 'rgb(0, 0, 255)',
+					verde: 'rgb(0, 128, 0)',
+					naranja: 'rgb(255, 165, 0)'
+				};
+				return elemColor === colores[color];
+			 };
+			 $.fn.parpadear = function() {
+				return $(this).fadeToggle('fast');
+			 }
+
 			$("#boton").click(function(event) {
 				var color = $('#color').val();
 				$('ul li:color('+color+')').parpadear(); 

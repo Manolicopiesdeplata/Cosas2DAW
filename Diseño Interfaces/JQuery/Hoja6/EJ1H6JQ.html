@@ -82,18 +82,18 @@
     $(document).ready(function(){
            
         $.fn.estilar = function(estilo) {
-          return $(this).addClass(estilo);
+          return $(this).attr('class','caja ' + estilo);
         }
         $.fn.bordear = function(bordes) {
           switch(bordes) {
             case 'redondos':
-              return $(this).css({'border-radius' : '2em', 'border' : '1px solid black'});
+              return $(this).css({'border-radius' : '2em', 'border' : '3px solid black'});
               break;
             case 'cuadrados':
-              return $(this).css('border' , '2px solid black');
+              return $(this).css({'border' : '3px solid black', 'border-radius' : '0'});
               break;
             case 'dobles':
-              return $(this).css('border', '3px double black');
+              return $(this).css({'border' : '3px double black', 'border-radius' : '0'});
               break;
           }
         }
