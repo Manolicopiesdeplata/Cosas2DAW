@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Paint casero</title>
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+  <style>
+   
+    #divColor {
+        width:40px;
+        height:40px;
+        border:2px solid grey;
+        background:black;
+        margin-right:10px;
+      
+    }
+    .color {
+        width:20px;
+        height:20px;
+        border:2px solid grey;
+        margin-top:10px;
+    }
+    
+    #negro {background:black;}
+    #gris {background:grey;}
+    #rojo {background:red;}
+    #naranja {background:orange;}
+    #amarillo {background:yellow;}
+    #verde {background:green;}
+    #azul {background:blue;}
+    #rosa {background:pink;}
+    #blanco {background:white;}
+    
+    .celda { 
+        width:20px;
+        height:20px;
+        border:2px solid grey;
+     }
+    
+  </style>
+</head>
+<body>
+  
+  <table>
+  
+    <tr>
+      <td>Color<div id="divColor"></div></td>
+
+      <td><div id="negro" class="color"></div></td>
+      <td><div id="gris" class="color"></div></td>
+      <td><div id="rojo" class="color"></div></td>
+      <td><div id="naranja" class="color"></div></td>
+      <td><div id="amarillo" class="color"></div></td>
+      <td><div id="verde" class="color"></div></td>
+      <td><div id="azul" class="color"></div></td>
+      <td><div id="rosa" class="color"></div></td>
+      <td><div id="blanco" class="color"></div></td>
+    </tr>
+    
+  </table>
+  
+<table>
+  
+    <tr>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+    </tr>
+    <tr>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+    </tr>
+    <tr>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+    </tr>
+    <tr>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+    </tr>
+    <tr>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+      <td><div class="celda"></div></td>
+    </tr>
+  </table>  
+  
+  <script>
+    $(document).ready(function(){
+      $.fn.ponBorde = function(color) {
+        return $(this).css('border', '2px solid ' +color);
+      }
+
+      $.fn.ponFondo = function(fondo) {
+        return $(this).css('background', fondo);
+      }
+
+      $('.celda, .color').mouseenter(function(event) {
+        let bordeColor = 'blue';
+        $(this).ponBorde(bordeColor);
+      });
+
+      $('.celda, .color').mouseleave(function (event) { 
+        $(this).ponBorde('grey');
+       });
+
+      $('.celda').click(function (event) {
+        let colorSeleccionado = $('#divColor').css('background-color');
+        $(this).ponFondo(colorSeleccionado);
+       });
+       
+      $('.color').click(function (event) {
+        let colorSeleccionado = $(this).css('background-color');
+        $('#divColor').ponFondo(colorSeleccionado);
+       });
+
+
+	
+	  });    
+  </script>
+ 
+</body>
+</html>
