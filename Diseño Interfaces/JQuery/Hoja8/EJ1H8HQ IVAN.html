@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script src="./jquery.min.js"></script>
+	<link href="./bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script src="./bootstrap.min.js"></script>
+
+	<style>
+		.container {width:50%; border:solid hotpink 3px; padding:15px;}
+		h1 {text-align:center;
+			color:hotpink;}
+		li {color:blue;font-size:1.3em;}
+
+	</style>
+</head>
+
+<body>
+  <div class="container">
+	<h1>Lista de Libros</h1>
+	<br>
+
+	<ul>
+		<li class='DB'>Inferno (Dan Brown)</li>
+		<li class='MA'>El último Catón (Matilde Asensi)</li>
+		<li class='DP'>El códice Maya (Douglas Preston)</li>
+		<li class='DP'>Tiranosaurio (Douglas Preston)</li>
+		<li class='MA'>Todo bajo el cielo (Matilde Asensi)</li>
+		<li class='DB'>La fortaleza digital (dan Brown)</li>
+	<br>
+
+  <script>
+	$(document).ready(function(){
+
+		$('body').prepend('<h2 style="text-align:center">Profesora</h2>');
+
+		$('ul li').click(function(){
+			let inicioNombre = $(this).text().indexOf('(') + 1;
+			let finNombre = $(this).text().indexOf(')');
+
+			let autor = $(this).text().substring(inicioNombre, finNombre)
+
+			$('li').sinNegrita();
+			$('li:autor('+autor+')').darEfecto().negrita();
+		});
+
+		$.fn.darEfecto = function(){
+			return $(this).fadeOut().fadeIn();
+		}
+
+		$.fn.negrita = function(){
+			return $(this).css('font-weight','900');
+		}
+
+		$.fn.sinNegrita = function(){
+			return $(this).css('font-weight','200');
+		}
+
+		$.expr[':'].autor = function (elem, i, meta) {
+			return $(elem).text().toLowerCase().includes(meta[3].toLowerCase());
+		}
+	});
+  </script>
+</body>
+</html>
