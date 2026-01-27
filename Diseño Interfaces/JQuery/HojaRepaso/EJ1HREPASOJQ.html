@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script src="./jquery.min.js"></script>
+	<link href="./bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script src="./bootstrap.min.js"></script>
+
+	<style>
+		.container {width:50%; border:solid blue 3px; padding:15px;}
+		h1 {text-align:center; 
+			color:blue;}
+		select {color:red;}
+		.Combo {width:25%;}
+
+	</style>
+</head>
+
+<body>
+  <div class="container">
+	<h1>Párrafos y Clases</h1>
+	<br>
+
+	<p class="especial">Este es un párrafo de clase <b>ESPECIAL</b>. </p>
+	<p>Este es un párrafo sin clase. </p>
+	<p>Este es otro párrafo sin clase. </p>
+	<p class="super">Este es un párrafo de clase <b>SUPER</b>. </p>
+	<p>Este es un párrafo sin clase. </p>
+	<p class="super">Este es un párrafo de clase <b>SUPER</b>. </p>
+	<p class="especial">Este es un párrafo de clase <b>ESPECIAL</b>. </p>
+
+	<br>
+  
+	<div class="Combo">
+		<label for="color"><b>Elige color:</b></label>
+		<select class="form-control" id="color">
+			<option>Red</option>
+			<option>Blue</option>
+			<option>HotPink</option>
+			<option>DarkGreen</option>
+		</select>
+	</div>
+	<div class="Combo">
+		<label for="clase"><b>Elige clase:</b></label>
+		<select class="form-control" id="clase">
+			<option>sin clase</option>
+			<option>especial</option>
+			<option>super</option>
+		</select>
+	</div>
+	<br>
+		<input type="button" class="btn btn-primary" id="boton" value="Seleccionar Párrafos"/> 
+		<input type="button" class="btn btn-primary" id="resetear" value="Deseleccionar"/> 
+  </div>
+
+  <script>
+	$(document).ready(function(){
+
+		$('body').prepend('<h2 style="text-align:center">ManolitoPiesDePlata</h2>');
+
+		$.fn.estilar = function (fondo, color) { 
+			return $(this).css({'background' : fondo, 'color' : color});
+		}
+
+		$.expr[':'].tieneClase = function(elem, i, meta) {
+			return $(elem).hasClass(meta[3]);
+		}
+		$.expr[':'].noTieneClase = function(elem, i, meta) {
+			return $(elem).attr('class') === undefined;
+		}
+		$('#boton').click(function() {
+			let color = $('#color option:selected').val();
+			let clase = $('#clase option:selected').val();
+			$('p').estilar('', '');
+			if(clase === 'especial' || clase === 'super') {
+				return $('p:tieneClase(' + clase + ')').estilar('yellow', color);
+			}else {
+				return $('p:noTieneClase(' + clase +')').estilar('yellow', color);
+			}
+		});
+		$('#resetear').click(function() {
+			$('p').estilar('', '');
+		});
+
+	});
+  </script>
+</body>
+</html>
