@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script src="./jquery.min.js"></script>
+	<link href="./bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script src="./bootstrap.min.js"></script>
+
+	<style>
+		.container {width:50%; border:solid hotpink 3px; padding:15px;}
+		h1 {text-align:center; 
+			color:hotpink;}
+		li {color:blue;font-size:1.3em;}
+
+	</style>
+</head>
+
+<body>
+  <div class="container">
+	<h1>Lista de Libros</h1>
+	<br>
+
+	<ul>
+		<li class='DB'>Inferno (Dan Brown)</li>
+		<li class='MA'>El último Catón (Matilde Asensi)</li>
+		<li class='DP'>El códice Maya (Douglas Preston)</li>
+		<li class='DP'>Tiranosaurio (Douglas Preston)</li>
+		<li class='MA'>Todo bajo el cielo (Matilde Asensi)</li>
+		<li class='DB'>La fortaleza digital (Dan Brown)</li>
+	<br>
+
+  <script>
+	$(document).ready(function(){
+
+		$('body').prepend('<h2 style="text-align:center">Profesora</h2>');
+
+		$.fn.darEfecto = function(efecto) {
+			return $(this).fadeOut('slow').fadeIn('slow');
+		}
+		$.fn.negrita = function() {
+			return $(this).css('font-weight','bold');
+		}
+		$.fn.sinNegrita = function() {
+			return $(this).css('font-weight','normal');
+		}
+
+		$.expr[':'].autor = function(elem, i, meta){
+			return $(elem).text().toLowerCase().includes(meta[3].toLowerCase());
+		};
+		$('li').click(function(){
+			let autor;
+			if($(this).hasClass('DB')){
+				autor = 'Dan Brown';
+			} else if($(this).hasClass('DP')) {
+				autor = 'Douglas Preston';
+			}else if ($(this).hasClass('MA')) {
+				autor = 'Matilde Asensi';
+			}
+			$('li').sinNegrita();
+			$('li:autor(' + autor + ')').darEfecto().negrita();
+		});
+	});
+  </script>
+</body>
+</html>
