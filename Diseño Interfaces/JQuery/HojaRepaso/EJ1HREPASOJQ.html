@@ -20,7 +20,7 @@
 	<h1>Párrafos y Clases</h1>
 	<br>
 
-	<p class="especial">Este es un párrafo de clase <b>ESPECIAL</b>. </p>
+	<p class="especial simple">Este es un párrafo de clase <b>SIMPLE Y ESPECIAL</b>. </p>
 	<p>Este es un párrafo sin clase. </p>
 	<p>Este es otro párrafo sin clase. </p>
 	<p class="super">Este es un párrafo de clase <b>SUPER</b>. </p>
@@ -57,7 +57,7 @@
 
 		$('body').prepend('<h2 style="text-align:center">ManolitoPiesDePlata</h2>');
 
-		$.fn.estilar = function (fondo, color) { 
+		$.fn.estilar = function (fondo, color) {
 			return $(this).css({'background' : fondo, 'color' : color});
 		}
 
@@ -70,11 +70,10 @@
 		$('#boton').click(function() {
 			let color = $('#color option:selected').val();
 			let clase = $('#clase option:selected').val();
-			$('p').estilar('', '');
 			if(clase === 'especial' || clase === 'super') {
 				return $('p:tieneClase(' + clase + ')').estilar('yellow', color);
 			}else {
-				return $('p:noTieneClase(' + clase +')').estilar('yellow', color);
+				return $('p:noTieneClase').estilar('yellow', color);
 			}
 		});
 		$('#resetear').click(function() {
