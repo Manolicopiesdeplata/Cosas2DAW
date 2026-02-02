@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="./bootstrap.min.css">
+    <!-- jQuery -->
+      <script src="./jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+      <script src="./bootstrap.min.js" ></script>
+
+  <style>
+  	
+	#videoteca {
+		border: 5px dashed yellow;
+		width:400px;
+		padding-top:15px;
+		padding-bottom:15px;
+		float:left;
+	}
+
+  	li {font-size:1.5em;}
+   	
+   	input[type="button"] {background: blue;color:white;font-size:1.5em;margin-right:15px;}
+	#botonNew {font-size:1.2em;}
+	#botonOcultar {background: grey;}
+	#botonMostrar {background: gold;}
+	
+	
+   	#nuevaPeli {
+		margin-left:20px;
+		padding-left:10px;
+		padding-right:10px;
+		padding-bottom:10px;
+		float:left;
+		width:300px;
+		border: 5px dashed yellow;
+	}
+	
+	#titulo {width:250px;}
+	#actriz, #actriz2 {width:175px;}
+
+	.form-group {float:left;margin-right: 30px;}
+
+	.oculta {visibility:hidden;}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+	<h1>Videoteca de "Manuel López Medina"</h1>
+	<ul id="videoteca">
+		<li><span class="Barrymore">50 primeras citas</span></li>
+		<li><span class="Roberts">Pretty Woman</span></li>
+		<li><span class="Bullock">La Red</span></li>
+		<li><span class="Roberts">Durmiendo con su enemigo</span></li>
+		<li><span class="Barrymore">Los Ángeles de Charlie: Al límite</span></li>
+		<li><span class="Bullock">La Proposición</span></li>
+		<li><span class="Bullock">Mientras dormías</span></li>
+	</ul>
+	<form id="nuevaPeli">
+		<fieldset>
+			<legend>NUEVA PELÍCULA:</legend>
+			<label for="sel1">Título:</label>
+			<input type="text" id="titulo" name="titulo">
+			<br>
+			<br>
+			<label for="sel1">Actriz:</label>
+			<select class="form-control" id="actriz2">
+				<option><h3>Drew Barrymore</h3></option>
+				<option><h3>Julia Roberts</h3></option>
+				<option><h3>Sandra Bullock</h3></option>
+			 </select>
+			 <br> 
+			 <input type="button" id="botonNew" value="Introducir Película"/>
+		</fieldset>
+	</form>
+
+</div>
+
+<div class="container">
+    <div class="form-group">
+       <label for="sel1">Actriz:</label>
+       <select class="form-control" id="actriz">
+          <option><h3>Drew Barrymore</h3></option>
+          <option><h3>Julia Roberts</h3></option>
+          <option><h3>Sandra Bullock</h3></option>
+       </select>
+	</div>
+	<div class="form-group">
+		<label for="sel1">Tamaño del borde:</label>
+		<select class="form-control" id="size">
+		   <option><h3>3px</h3></option>
+		   <option><h3>4px</h3></option>
+		   <option><h3>5px</h3></option>
+		</select>
+	 </div>
+
+     <div class="form-group">
+       <label for="sel1">Color del borde:</label>
+       <select class="form-control" id="color">
+          <option><h3>blue</h3></option>
+          <option><h3>green</h3></option>
+          <option><h3>orange</h3></option>
+       </select>
+    </div>
+
+    <div class="form-group">
+       <label for="sel1">Estilo del borde:</label>
+       <select class="form-control" id="estilo">
+          <option><h3>solid</h3></option>
+          <option><h3>dotted</h3></option>
+          <option><h3>dashed</h3></option>
+       </select>
+    </div>
+
+	<br> 
+	<br> 
+	<br> 
+	<br> 
+	<input type="button" id="botonFiltrar" value="Filtrar por actriz"/> 
+
+   <input type="button" id="botonOcultar" value="Ocultar"/> 
+
+   <input type="button" id="botonMostrar" value="Mostrar todas"/> 
+
+ </div>
+
+<script>
+	$(document).ready(function(){
+
+		function apellido(nombreCompleto) {
+			const partesNombre = nombreCompleto.split(' ');
+      		// Comprobamos que haya al menos dos partes (nombre y apellido)
+      		if (partesNombre.length >= 2) {
+        		return partesNombre[partesNombre.length - 1];
+      		} else {
+        		// Si solo hay una parte, devolvemos esa parte
+        		return nombreCompleto;
+      		}
+    	};
+
+		$.fn.bordear = function(pixeles, borde, color) {
+			return $(this).css('border', `${pixeles} ${borde} ${color}`);
+		}
+
+		$.fn.sinBordes = function() {
+			return $(this).css('border', 'none');
+		}
+
+		$.fn.marcar = function (bool) { 
+			switch(bool) {
+				case 'si':
+					return $(this).addClass('marcado');
+					break;
+				case 'no':
+					return $(this).removeClass('marcado');
+					break;
+			}
+		}
+
+		$.fn.ocultar = function() {
+			return $(this).addClass('oculta');
+		}
+		$.fn.mostrar = function () { 
+			return $(this).removeClass('oculta');
+		}
+
+		$.expr[':'].marcada = function (elem, i, meta) {
+			return $(elem).hasClass('marcado');
+		}
+
+		$.expr[':'].actriz = function(elem, i, meta) {
+			return $(elem).hasClass(meta[3]);
+		}
+
+		$('#botonFiltrar').click(function() { 
+			let borde = $('#size option:selected').val();
+			let color = $('#color option:selected').val();
+			let estilo = $('#estilo option:selected').val();
+			let actriz = $('#actriz option:selected').val();
+			
+			$('li span').sinBordes().marcar('no');
+			return $('li span:actriz(' + apellido(actriz) + ')').bordear(borde, estilo, color).marcar('si');
+		 });
+
+		$('#botonOcultar').click(function() {
+			return $('li span:marcada(' + 'marcado' +')').ocultar();
+		});
+		$('#botonMostrar').click(function() {
+			$('li span').sinBordes().marcar('no');
+			return $('li span').mostrar();
+		});
+		
+		$('#botonNew').click(function() {
+			let actriz2 = $('#actriz2 option:selected').val();
+			let titulo = $('#titulo').val();
+			if(titulo === '') {
+				alert('introduce algo webon');
+				return;
+			}else {
+				let nuevaPeli = '<li><span class='+ apellido(actriz2) +'>'+titulo+'</span></li>'
+				let videoteca = $('#videoteca');
+				videoteca.append(nuevaPeli);
+			}
+
+		})
+	});
+</script>
+</body>
+</html>
